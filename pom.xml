@@ -48,7 +48,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>spring-boot-docker</finalName> <!-- 指定package生成的文件名为spring-boot-docker.jar -->
+		<!-- <finalName>spring-boot-docker</finalName> --> <!-- 指定package生成的文件名为spring-boot-docker.jar -->
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -62,7 +62,7 @@
 	            <configuration>
 	                <!-- 注意imageName一定要是符合正则[a-z0-9-_.]的，否则构建不会成功 -->
 	                <!-- 详见：https://github.com/spotify/docker-maven-plugin    Invalid repository name ... only [a-z0-9-_.] are allowed-->
-	                <imageName>microservice-discovery-eureka</imageName>
+	                <imageName>wulinyun/spring-boot-docker</imageName>
 	                <baseImage>java</baseImage>
 	                <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
 	                <resources>
