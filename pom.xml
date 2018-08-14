@@ -22,8 +22,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<!-- 增加docker镜像前缀 ，其实就是对应仓库里面的项目名称，不是应用的项目名称-->
-		<docker.image.prefix>wulinyun</docker.image.prefix>
+		<!-- 增加docker镜像前缀 ，其实就是对应仓库里面的ip地址或者域名/项目名称，不是应用的项目名称-->
+		<docker.image.prefix>harbor.k8s.landaudev.com/wulinyun</docker.image.prefix>
 	</properties>
 
 	<dependencies>
@@ -83,7 +83,7 @@
 	                <serverId>docker-pcf-harbor</serverId>
 					<registryUrl>https://harbor.landaudev.com</registryUrl> 
 					-->
-					<!-- k8s私有镜像仓库 -->
+					<!-- k8s私有镜像仓库  -->
 					<serverId>docker-k8s-harbor</serverId>
 					<registryUrl>https://harbor.k8s.landaudev.com</registryUrl>
 	            </configuration>
