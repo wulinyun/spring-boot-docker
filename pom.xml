@@ -85,7 +85,7 @@
 	            <groupId>com.spotify</groupId>
 	            <artifactId>docker-maven-plugin</artifactId>
 	            <version>0.4.12</version>
-	            <!-- 此配置用于绑定mvn package执行就自动执行了mvn docker:build
+	            <!-- 此配置用于绑定mvn package执行就自动执行了mvn docker:build-->
 	            <executions>
 					<execution>
 						<id>build-image</id>
@@ -95,7 +95,7 @@
 						</goals>
 					</execution>
 				</executions>
-				 -->
+				 
 	            <configuration>
 	                <!-- 注意imageName一定要是符合正则[a-z0-9-_.]的，否则构建不会成功 -->
 	                <!-- 详见：https://github.com/spotify/docker-maven-plugin    Invalid repository name ... only [a-z0-9-_.] are allowed-->
