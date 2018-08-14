@@ -25,7 +25,31 @@
 		<!-- 增加docker镜像前缀 ，其实就是对应仓库里面的ip地址或者域名/项目名称，不是应用的项目名称-->
 		<docker.image.prefix>harbor.k8s.landaudev.com/demo</docker.image.prefix>
 	</properties>
-
+	<profiles>  
+	    <profile>  
+	        <id>dev</id>  
+	        <properties>  
+	            <!-- 环境标识，需要与配置文件的名称相对应 -->  
+	            <activatedProperties>dev</activatedProperties>  
+	        </properties>  
+	        <activation>  
+	            <!-- 默认环境 -->  
+	            <activeByDefault>true</activeByDefault>  
+	        </activation>  
+	    </profile>  
+	    <profile>  
+	        <id>test</id>  
+	        <properties>  
+	            <activatedProperties>test</activatedProperties>  
+	        </properties>  
+	    </profile>  
+	    <profile>  
+	        <id>prod</id>  
+	        <properties>  
+	            <activatedProperties>prod</activatedProperties>  
+	        </properties>  
+	    </profile>  
+	</profiles>  
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
