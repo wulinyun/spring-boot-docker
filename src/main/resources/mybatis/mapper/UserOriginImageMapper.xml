@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.landasoft.mas.facerecognition.mapper.UserOriginImageMapper">
+ 
+  <select id="findUserOriginImageInfo" resultType="com.landasoft.mas.facerecognition.model.vo.UserOriginImage" parameterType="java.lang.String">
+    select id,type,userId,imageId,createTime,updateTime from user_face_image
+		<if test=" userId  != null and userId  != ''">
+			where userId= #{userId} 
+		</if>
+		 order by createTime desc
+  </select>
+  <insert id="insertUserOriginImageInfo" parameterType="com.landasoft.mas.facerecognition.model.vo.UserOriginImage">
+    <selectKey keyProperty="id" resultType="java.lang.String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+    </selectKey>
+    insert into user_face_image (id,type,userId,imageId,createTime,updateTime) values (#{id},#{type}, #{userId},
+        #{imageId},#{createTime},#{createTime});
+  </insert>
+  <update id="updateUserOriginImageInfo" parameterType="com.landasoft.mas.facerecognition.model.vo.UserOriginImage">
+     update user_face_image set
+     imageId = #{imageId},
+     updateTime = #{updateTime}
+  	 where userId = #{userId}
+  </update>
+</mapper>
