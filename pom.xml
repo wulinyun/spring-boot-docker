@@ -101,6 +101,11 @@
 			<version>2.7.0</version>
 		</dependency>
 		<!-- swagger end -->
+		<!-- 启用 Actuator 的端点提供Spring Boot所有的production-ready特性 -->
+		<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-actuator</artifactId>
+    	</dependency>
 	</dependencies>
 
 	<build>
