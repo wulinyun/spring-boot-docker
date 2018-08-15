@@ -6,31 +6,31 @@ import java.util.HashMap;
  * @author wulinyun
  * 2018年7月23日下午5:35:14
  */
-public class ResultMapUtils {
+public class ResultUtils {
 	
 	private Integer code=200;
 	private String  msg="成功";
 	private Object  data = new HashMap<String,Object>();
 	
-	public ResultMapUtils(Integer code, String msg, Object data) {
+	public ResultUtils(Integer code, String msg, Object data) {
 		super();
 		this.code = code;
 		this.msg = msg;
 		this.data = data;
 	}
 	
-	public ResultMapUtils(Integer code, String msg) {
+	public ResultUtils(Integer code, String msg) {
 		super();
 		this.code = code;
 		this.msg = msg;
 	}
 
-	public ResultMapUtils(Object data) {
+	public ResultUtils(Object data) {
 		super();
 		this.data = data;
 	}
 	
-	public ResultMapUtils() {
+	public ResultUtils() {
 		super();
 	}
 

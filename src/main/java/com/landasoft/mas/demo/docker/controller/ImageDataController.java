@@ -6,7 +6,7 @@ import com.landasoft.mas.demo.docker.mapper.UserAnnotationMapper;
 import com.landasoft.mas.demo.docker.mapper.UserOriginImageMapper;
 import com.landasoft.mas.demo.docker.model.vo.UserOriginImage;
 import com.landasoft.mas.demo.docker.service.api.UserOriginImageService;
-import com.landasoft.mas.demo.docker.utils.ResultMapUtils;
+import com.landasoft.mas.demo.docker.utils.ResultUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,11 +38,11 @@ public class ImageDataController extends BaseController {
 	 * @return
 	 */
 	@GetMapping(value="/listImageDatas")
-	public ResultMapUtils listImageDatas(
+	public ResultUtils listImageDatas(
 			@RequestParam(value="userId",required=false)String userId,
 			HttpServletRequest request) {
 		List<UserOriginImage> userAnnotaionImages = this.userOriginImageService.findUserOriginImageByUserId(userId);
-		return new ResultMapUtils(userAnnotaionImages);
+		return new ResultUtils(userAnnotaionImages);
 		
 	}
 }
