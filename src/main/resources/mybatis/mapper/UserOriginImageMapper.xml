@@ -3,21 +3,21 @@
 <!-- 请注意一定要和UserOriginImageMapper.java路径对应 -->
 <mapper namespace="com.landasoft.mas.demo.docker.mapper.UserOriginImageMapper">
  
-  <select id="findUserOriginImageInfo" resultType="com.landasoft.mas.facerecognition.model.vo.UserOriginImage" parameterType="java.lang.String">
+  <select id="findUserOriginImageInfo" resultType="com.landasoft.mas.demo.docker.model.vo.UserOriginImage" parameterType="java.lang.String">
     select id,type,userId,imageId,createTime,updateTime from user_face_image
 		<if test=" userId  != null and userId  != ''">
 			where userId= #{userId} 
 		</if>
 		 order by createTime desc
   </select>
-  <insert id="insertUserOriginImageInfo" parameterType="com.landasoft.mas.facerecognition.model.vo.UserOriginImage">
+  <insert id="insertUserOriginImageInfo" parameterType="com.landasoft.mas.demo.docker.model.vo.UserOriginImage">
     <selectKey keyProperty="id" resultType="java.lang.String" order="BEFORE">
             select replace(uuid(),'-','') from dual
     </selectKey>
     insert into user_face_image (id,type,userId,imageId,createTime,updateTime) values (#{id},#{type}, #{userId},
         #{imageId},#{createTime},#{createTime});
   </insert>
-  <update id="updateUserOriginImageInfo" parameterType="com.landasoft.mas.facerecognition.model.vo.UserOriginImage">
+  <update id="updateUserOriginImageInfo" parameterType="com.landasoft.mas.demo.docker.model.vo.UserOriginImage">
      update user_face_image set
      imageId = #{imageId},
      updateTime = #{updateTime}
