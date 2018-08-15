@@ -21,17 +21,4 @@ public interface UserOriginImageMapper {
 	 */
 	public List<UserOriginImage> findUserOriginImageInfo(@Param("userId")String userId);
 	
-	/**
-	 * 插入某个用户的人脸图片
-	 * @param userOriginImage 
-	 * @return
-	 */
-	public int insertUserOriginImageInfo(UserOriginImage userOriginImage);
-	
-	/**
-	 * 更新某个用户的人脸图片
-	 * @param userOriginImage
-	 * @return
-	 */
-	public int updateUserOriginImageInfo(UserOriginImage userOriginImage);
 }
