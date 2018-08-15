@@ -3,7 +3,7 @@ server:
 
 spring:
   profiles:
-    active: @profiles.active@   # @profiles.active@
+    active: dev   # @activatedProperties@
   mvc:
     throw-exception-if-no-handler-found: true
   application:
