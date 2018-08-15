@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.landasoft.mas.demo.docker.mapper.UserAnnotationMapper;
 import com.landasoft.mas.demo.docker.mapper.UserOriginImageMapper;
 import com.landasoft.mas.demo.docker.model.vo.UserOriginImage;
+import com.landasoft.mas.demo.docker.service.api.UserOriginImageService;
 import com.landasoft.mas.demo.docker.utils.ResultMapUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,16 +26,11 @@ import java.util.Date;
 @RestController
 @RequestMapping(value="/rest/image")
 public class ImageDataController extends BaseController {
-	
-	//建议阈值为0.7-0.8
-	@Value("${imageData.verification_score:0.7}")
-	private static final Double VERIFICATION_SCORE = 0.7;
-	
+	/**
+	 * 注入用户原始图片服务
+	 */
 	@Autowired
-	private UserOriginImageMapper userOriginImageMapper;
-	@Autowired
-	private UserAnnotationMapper userAnnotationMapper;
-	
+	private UserOriginImageService userOriginImageService;
 	/**
 	 * 查询某个用户的原始人脸数据
 	 * @param request
@@ -45,8 +41,8 @@ public class ImageDataController extends BaseController {
 	public ResultMapUtils listImageDatas(
 			@RequestParam(value="userId",required=false)String userId,
 			HttpServletRequest request) {
-		List<UserOriginImage> userOriginImages = userOriginImageMapper.findUserOriginImageInfo(userId);
-		return new ResultMapUtils(userOriginImages);
+		List<UserOriginImage> userAnnotaionImages = this.userOriginImageService.findUserOriginImageByUserId(userId);
+		return new ResultMapUtils(userAnnotaionImages);
 		
 	}
 }

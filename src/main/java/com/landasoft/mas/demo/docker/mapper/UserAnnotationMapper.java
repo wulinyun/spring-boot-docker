@@ -17,8 +17,8 @@ import com.landasoft.mas.demo.docker.model.vo.UserOriginImage;
 @Mapper
 public interface UserAnnotationMapper {
 	@Select("select id,type,userId,imageId,createTime,updateTime from user_face_image where userId=#{userId}")
-	public List<UserOriginImage> findUserByUserId(@Param("userId")String userId);
+	public List<UserOriginImage> findUserOriginImageByUserId(@Param("userId")String userId);
 	@Select("select id,type,userId,imageId,createTime,updateTime from user_face_image where userId=#{map.userId}")
-	public List<UserOriginImage> findUserByMapUserId(@Param("map")Map<String,Object> map);
+	public List<UserOriginImage> findUserOriginImageByMapUserId(@Param("map")Map<String,Object> map);
 	
 }
