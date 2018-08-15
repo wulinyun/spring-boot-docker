@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.landasoft.mas.facerecognition.mapper.UserOriginImageMapper">
+<!-- 请注意一定要和UserOriginImageMapper.java路径对应 -->
+<mapper namespace="com.landasoft.mas.demo.docker.mapper.UserOriginImageMapper">
  
   <select id="findUserOriginImageInfo" resultType="com.landasoft.mas.facerecognition.model.vo.UserOriginImage" parameterType="java.lang.String">
     select id,type,userId,imageId,createTime,updateTime from user_face_image
