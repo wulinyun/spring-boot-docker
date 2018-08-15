@@ -8,3 +8,9 @@ spring:
     throw-exception-if-no-handler-found: true
   application:
     name: landa-mas-docker-demo    # 项目名称尽量用小写
+#暴露actuator端点    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
