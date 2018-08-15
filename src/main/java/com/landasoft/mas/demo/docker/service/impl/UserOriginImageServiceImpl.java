@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import com.landasoft.mas.demo.docker.mapper.UserAnnotationMapper;
 import com.landasoft.mas.demo.docker.mapper.UserOriginImageMapper;
@@ -14,6 +15,7 @@ import com.landasoft.mas.demo.docker.service.api.UserOriginImageService;
  * @author wulinyun
  * 2018年8月15日下午5:31:53
  */
+@Service
 public class UserOriginImageServiceImpl implements UserOriginImageService {
 	//建议阈值为0.7-0.8
 		@Value("${imageData.verification_score:0.7}")
