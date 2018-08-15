@@ -3,7 +3,7 @@ server:
 
 spring:
   profiles:
-    active: dev   # @activatedProperties@
+    active: dev   # @activatedProperties@ 开发过程中可以指定配置环境，实际请使用后面的配置，以便构建使用指定配置构建代码包
   mvc:
     throw-exception-if-no-handler-found: true
   application:
