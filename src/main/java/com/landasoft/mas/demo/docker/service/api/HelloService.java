@@ -1,6 +1,6 @@
-package com.landasoft.mas.demo.docker.service;
+package com.landasoft.mas.demo.docker.service.api;
 
-import com.landasoft.mas.demo.docker.vo.User;
+import com.landasoft.mas.demo.docker.model.vo.User;
 
 /**
  * demo接口定义

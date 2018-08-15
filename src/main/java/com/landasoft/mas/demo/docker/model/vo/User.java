@@ -1,4 +1,4 @@
-package com.landasoft.mas.demo.docker.vo;
+package com.landasoft.mas.demo.docker.model.vo;
 /**
  * 用户实体bean
  * @author wulinyun

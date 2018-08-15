@@ -1,7 +1,7 @@
 package com.landasoft.mas.demo.docker.service.impl;
 
-import com.landasoft.mas.demo.docker.service.HelloService;
-import com.landasoft.mas.demo.docker.vo.User;
+import com.landasoft.mas.demo.docker.model.vo.User;
+import com.landasoft.mas.demo.docker.service.api.HelloService;
 /**
  * hell接口定义实现
  * @author wulinyun 
