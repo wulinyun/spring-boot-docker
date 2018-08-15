@@ -2,6 +2,7 @@ package com.landasoft.mas.demo.docker.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.landasoft.mas.demo.docker.mapper.UserAnnotationMapper;
 import com.landasoft.mas.demo.docker.mapper.UserOriginImageMapper;
 import com.landasoft.mas.demo.docker.model.vo.UserOriginImage;
 import com.landasoft.mas.demo.docker.utils.ResultMapUtils;
@@ -31,6 +32,8 @@ public class ImageDataController extends BaseController {
 	
 	@Autowired
 	private UserOriginImageMapper userOriginImageMapper;
+	@Autowired
+	private UserAnnotationMapper userAnnotationMapper;
 	
 	/**
 	 * 查询某个用户的原始人脸数据
