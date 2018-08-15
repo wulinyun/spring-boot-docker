@@ -5,7 +5,7 @@ import com.landasoft.mas.demo.docker.vo.User;
 /**
  * demo接口定义
  * @author wulinyun
- * 2018年8月15日上午11:53:59
+ * 2018年8月15日上午11:53:59  
  */
 public interface HelloService {
 	/**
