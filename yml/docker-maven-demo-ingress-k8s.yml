@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: docker-maven-demo-ingress
-        image: harbor.k8s.landaudev.com/demo/spring-boot-docker
+        image: harbor.landaudev.com/demo/spring-boot-docker
         ports:
         - containerPort: 8080
 
