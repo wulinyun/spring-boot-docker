@@ -153,13 +153,14 @@
 	                    </resource>
 	                </resources>
 	                <!-- 以下两行是为了docker push到Docker仓库中使用的。 -->
-	                <!-- PCF私有镜像仓库
+	                <!-- PCF私有镜像仓库-->
 	                <serverId>docker-pcf-harbor</serverId>
 					<registryUrl>https://harbor.landaudev.com</registryUrl> 
-					-->
-					<!-- k8s私有镜像仓库  -->
+					
+					<!-- k8s私有镜像仓库
 					<serverId>docker-k8s-harbor</serverId>
 					<registryUrl>https://harbor.k8s.landaudev.com</registryUrl>
+					  -->
 	            </configuration>
 	        </plugin>
 		</plugins>
