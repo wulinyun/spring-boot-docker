@@ -26,8 +26,8 @@
 			1、增加docker镜像前缀 ，其实就是对应仓库里面的ip地址或者域名/项目名称，不是应用的项目名称
 			2、如果不推送到私有仓库，只是在宿主机上面打镜像，可以去除前面ip或者域名的配置
 		-->
-		<!-- <docker.image.prefix>harbor.landaudev.com/demo</docker.image.prefix> -->
-		<docker.image.prefix>harbor.k8s.landaudev.com/demo</docker.image.prefix>
+		<docker.image.prefix>harbor.landaudev.com/demo</docker.image.prefix>
+		<!-- <docker.image.prefix>harbor.k8s.landaudev.com/demo</docker.image.prefix> -->
 	</properties>
 	<profiles>  
 	    <profile>  
