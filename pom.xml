@@ -26,7 +26,9 @@
 			1、增加docker镜像前缀 ，其实就是对应仓库里面的ip地址或者域名/项目名称，不是应用的项目名称
 			2、如果不推送到私有仓库，只是在宿主机上面打镜像，可以去除前面ip或者域名的配置
 		-->
+		<!-- PCF私有镜像仓库前缀 ，目前已经配置好，私有镜像仓库镜像本身可以部署到PCF，还可以部署到k8s中，所以可以默认配置选择本项目所有配置-->
 		<docker.image.prefix>harbor.landaudev.com/demo</docker.image.prefix>
+		<!-- k8s私有镜像仓库前缀 -->
 		<!-- <docker.image.prefix>harbor.k8s.landaudev.com/demo</docker.image.prefix> -->
 	</properties>
 	<profiles>  
