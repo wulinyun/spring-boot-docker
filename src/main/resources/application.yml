@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8080  #使用docker镜像部署到pcf中的端口一定要使用8080，要不然无法启动。所以平时开发默认可以不用去改端口号
 
 spring:
   profiles:
