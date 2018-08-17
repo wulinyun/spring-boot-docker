@@ -1,7 +1,7 @@
 ---
 applications:
 - name: spring-boot-docker-prod
-  memory: 2048M
+  memory: 1024M
   path: target/spring-boot-docker-0.0.1-SNAPSHOT.jar
   host: spring-boot-docker-prod
   domain: landaudev.com
