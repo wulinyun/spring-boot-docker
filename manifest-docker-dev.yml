@@ -6,7 +6,8 @@ applications:
   domain: landaudev.com
   docker:
     image: harbor.landaudev.com/demo/spring-boot-docker
-    username: admin
+    username: admin #
   env:
     TZ: Asia/Shanghai
-    CF_DOCKER_PASSWORD: landa 
+#在执行cf命令的终端设置密码环境变量 
+#export CF_DOCKER_PASSWORD=landa 
