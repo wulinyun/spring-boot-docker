@@ -6,7 +6,7 @@ applications:
   domain: landaudev.com
   docker:
     image: harbor.landaudev.com/demo/spring-boot-docker
-    username: admin     #私有镜像仓库用户名
+    username: admin
   env:
     TZ: Asia/Shanghai
     CF_DOCKER_PASSWORD: landa 

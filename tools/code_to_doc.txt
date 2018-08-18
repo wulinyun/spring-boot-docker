@@ -1,0 +1,24 @@
+一、标准生成index.html文档
+1.javadoc command
+D:\develop\javaSE1.8\jdk1.8\bin\javadoc.exe
+
+2.ecplise->project->generate javadoc
+
+Use standard doclet
+
+二、标准生成doc
+1.下载DocFlex/Doclet 下载地址 http://www.filigris.com/downloads/
+
+2.ecplise->project->generate javadoc
+
+Use custom doclet
+Doclet name:            com.docflex.javadoc.Doclet
+Doclet class path:   	D:\develop\javadoc\docflex-doclet-1.6.1\lib\docflex-doclet.jar
+VM options:               -J-Xmx512m -encoding utf-8
+Extra Javadoc options:
+                        -template D:\develop\javadoc\docflex-doclet-1.6.1\templates\javadoc\PlainDoc.tpl
+                                   -format RTF
+                                  -nodialog
+                                  -launchviewer=false
+                                  -f D:\doc\spring-boot-docker
+3.用word将rtf文件打开，另存为doc或docx
