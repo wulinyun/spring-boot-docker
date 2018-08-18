@@ -5,7 +5,7 @@ applications:
   host: spring-boot-docker-dev
   domain: landaudev.com
   docker:
-    image: harbor.landaudev.com/demo/spring-boot-docker:lastest
+    image: harbor.landaudev.com/demo/spring-boot-docker:latest
     username: admin #harbor私有镜像仓库用户名
   env:
     TZ: Asia/Shanghai
