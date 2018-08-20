@@ -3,6 +3,8 @@ package com.landasoft.mas.demo.docker.model.vo;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
  * 用户脸部照片实体
  * 
@@ -17,7 +19,9 @@ public class UserOriginImage implements Serializable {
 	private String userId; 		// 用户id
 	private String imageId; 	// 公有云图片Id
 	private Integer type = 0; 	// 0 正面 1侧面....暂时demo使用正面
+	@JsonFormat(/*timezone = "GMT+8", *//*pattern = "yyyy-MM-dd HH:mm:ss"*/)
 	private Date createTime; 	// 创建时间
+	@JsonFormat(/*timezone = "GMT+8",*//* pattern = "yyyy-MM-dd HH:mm:ss"*/)
 	private Date updateTime; 	// 更新时间
 
 	public String getId() {

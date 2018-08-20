@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.beans.factory.annotation.Value;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -41,6 +43,9 @@ public class ImageDataController extends BaseController {
 	public ResultUtils listImageDatas(
 			@RequestParam(value="userId",required=false)String userId,
 			HttpServletRequest request) {
+		Date date = new Date();
+		DateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		System.out.println(simpleDateFormat.format(date));
 		List<UserOriginImage> userAnnotaionImages = this.userOriginImageService.findUserOriginImageByUserId(userId);
 		return new ResultUtils(userAnnotaionImages);
 		
