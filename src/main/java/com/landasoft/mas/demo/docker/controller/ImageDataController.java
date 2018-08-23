@@ -62,7 +62,7 @@ public class ImageDataController extends BaseController {
 	@RequestMapping(value="/upload",method= {RequestMethod.POST,RequestMethod.GET})  
     @ResponseBody  
     public String upload(MultipartFile file,HttpServletRequest request) throws IOException{  
-        String path = request.getSession().getServletContext().getRealPath("upload");  
+        String path = request.getSession().getServletContext().getRealPath("/");  
         System.out.println(path);
         String fileName = file.getOriginalFilename();//获取到上传文件的名字
         String ftpHost = "192.168.0.191";
