@@ -8,12 +8,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.SocketException;
-
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPReply;
-
-import com.mysql.jdbc.util.Base64Decoder;
-
 import sun.misc.BASE64Encoder;
 
 public class FtpUtil {

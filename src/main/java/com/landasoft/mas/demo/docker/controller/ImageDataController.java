@@ -93,7 +93,8 @@ public class ImageDataController extends BaseController {
     }  
 	@RequestMapping(value="/downloadBase64",method= {RequestMethod.POST,RequestMethod.GET})  
     @ResponseBody  
-    public String downloadBase64(@RequestParam(value="fileName")String fileName,HttpServletRequest request) throws IOException{  
+    public String downloadBase64(@RequestParam(value="fileName")String fileName,
+    		HttpServletRequest request) throws IOException{  
         String path = request.getSession().getServletContext().getRealPath("/");  
         System.out.println(path);
         String ftpHost = "192.168.0.191";
