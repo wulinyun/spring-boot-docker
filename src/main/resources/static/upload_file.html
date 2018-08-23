@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+        <title></title>
+        <style>
+            div{width: 100%;}
+            .logo img{display:block; margin:0 auto;}
+            .upload{position: relative;width: 80px;height: 18px;line-height: 18px;background: #2fc7c9;text-align: center;
+                    color: #FFF;padding: 0px 5px;-webkit-border-radius: 2px;border-radius: 2px;
+                    margin: 0 auto;
+                    }
+            .upload form{width:100%;position:absolute; left:0; top:0;opacity:0; filter:alpha(opacity=0);}
+            .upload form input{width: 100%;}
+        </style>
+    </head>
+    <body>
+        <div class="logo">
+            <img src="img/1.jpg" />
+        </div>
+        <div class="upload">
+            <p>上传图片</p>
+            <form id="uploadForm" enctype="multipart/form-data" method="post" action="XXXXXX">
+     			<input type="file" name="imageFile" id="imageFile" onchange="fileSelected()" />
+			</form>
+        </div>
+    </body>
+    <script type="text/javascript">
+	    var iMaxFilesize = 2097152; //2M
+	    window.fileSelected = function() {
+	        var oFile = document.getElementById('imageFile').files[0];    //读取文件
+	        var rFilter = /^(image\/bmp|image\/gif|image\/jpeg|image\/png|image\/tiff)$/i;
+	        if (!rFilter.test(oFile.type)) {
+	            alert("文件格式必须为图片");
+	            return;
+	        }
+	        if (oFile.size > iMaxFilesize) {
+	            alert("图片大小不能超过2M");
+	            return;
+	        }
+	        var vFD = new FormData(document.getElementById('uploadForm')),    //建立请求和数据
+	            oXHR = new XMLHttpRequest();
+	        oXHR.addEventListener('load', function(resUpload) {
+	            //成功
+	        }, false);
+	        oXHR.addEventListener('error', function() {
+	            //失败
+	        }, false);
+	        oXHR.addEventListener('abort', function() {
+	            //上传中断
+	        }, false);
+	        var actionUrl = "/rest/image/upload";
+	        oXHR.open('POST', actionUrl);
+	        oXHR.send(vFD);
+	    };
+    </script>
+</html>
