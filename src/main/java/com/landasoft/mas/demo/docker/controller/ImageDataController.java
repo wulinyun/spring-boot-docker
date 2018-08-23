@@ -91,5 +91,20 @@ public class ImageDataController extends BaseController {
         //file.transferTo(dir);  
         return "colleague/"+fileName;  
     }  
-   
+	@RequestMapping(value="/downloadBase64",method= {RequestMethod.POST,RequestMethod.GET})  
+    @ResponseBody  
+    public String downloadBase64(@RequestParam(value="fileName")String fileName,HttpServletRequest request) throws IOException{  
+        String path = request.getSession().getServletContext().getRealPath("/");  
+        System.out.println(path);
+        String ftpHost = "192.168.0.191";
+        String ftpUserName = "test";
+        String ftpPassword = "test";
+        int ftpPort = 21;
+        String ftpPath = "colleague/";
+        String imageBase64Str = "data:image/jpeg;base64,";//前端显示前缀
+        //上传一个文件
+        imageBase64Str = imageBase64Str+FtpUtil.downloadFtpFileBase64(ftpHost, ftpUserName, ftpPassword, ftpPort, ftpPath, fileName);
+        System.out.println("imageBase64Str:"+imageBase64Str);
+        return imageBase64Str;  
+    }  
 }
