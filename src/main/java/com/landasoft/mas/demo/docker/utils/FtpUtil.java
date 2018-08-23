@@ -1,5 +1,6 @@
 package com.landasoft.mas.demo.docker.utils;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -10,6 +11,10 @@ import java.net.SocketException;
 
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPReply;
+
+import com.mysql.jdbc.util.Base64Decoder;
+
+import sun.misc.BASE64Encoder;
 
 public class FtpUtil {
 
@@ -88,7 +93,51 @@ public class FtpUtil {
         }
 
     }
+    /*
+     * 从FTP服务器下载文件
+     *
+     * @param ftpHost FTP IP地址
+     * @param ftpUserName FTP 用户名
+     * @param ftpPassword FTP用户名密码
+     * @param ftpPort FTP端口
+     * @param ftpPath FTP服务器中文件所在路径 格式： ftptest/aa
+     * @param fileName 文件名称
+     */
+    public static String downloadFtpFileBase64(String ftpHost, String ftpUserName,
+                                       String ftpPassword, int ftpPort, String ftpPath,
+                                       String fileName) {
 
+        FTPClient ftpClient = null;
+        ByteArrayOutputStream os = new ByteArrayOutputStream();//
+        // 对字节数组Base64编码
+		BASE64Encoder encoder = new BASE64Encoder();
+        try {
+            ftpClient = getFTPClient(ftpHost, ftpUserName, ftpPassword, ftpPort);
+            ftpClient.setControlEncoding("UTF-8"); // 中文支持
+            ftpClient.setFileType(FTPClient.BINARY_FILE_TYPE);
+            ftpClient.enterLocalPassiveMode();
+            ftpClient.changeWorkingDirectory(ftpPath);
+            ftpClient.retrieveFile(fileName, os);
+            os.close();
+            ftpClient.logout();
+        } catch (FileNotFoundException e) {
+            System.out.println("没有找到" + ftpPath + "文件");
+            e.printStackTrace();
+        } catch (SocketException e) {
+            System.out.println("连接FTP失败.");
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("文件读取错误。");
+            e.printStackTrace();
+        }
+        finally {
+        	
+        }
+     // 返回Base64编码过的字节数组字符串
+		return encoder.encode(os.toByteArray());
+
+    }
     /**
      * Description: 向FTP服务器上传文件
      * @param ftpHost FTP服务器hostname
@@ -135,5 +184,5 @@ public class FtpUtil {
         }
         return success;
     }
-
+    
 }
