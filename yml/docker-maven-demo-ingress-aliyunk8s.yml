@@ -38,7 +38,7 @@ metadata:
   name: docker-maven-demo-ingress
 spec:
   rules:
-  - host: docker-maven-demo-ingress.k8s.landaudev.com
+  - host: docker-maven-demo-ingress.alik8s.landaudev.com
     http:
       paths:
       - path: /
