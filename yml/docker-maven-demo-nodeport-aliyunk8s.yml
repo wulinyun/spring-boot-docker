@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: docker-maven-demo
+  name: docker-maven-demo
+spec:
+  ports:
+    - port: 8080 #服务访问端口
+      targetPort: 8080 #容器端口
+      nodePort: 30001 #NodePort
+  selector:
+    app: docker-maven-demo
+  type: NodePort
+
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: docker-maven-demo
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: docker-maven-demo
+    spec:
+      imagePullSecrets: 
+      - name: landa-harbor-secret
+      containers:
+      - name: docker-maven-demo
+        image: harbor.landaudev.com/demo/spring-boot-docker
+#        image: harbor.k8s.landaudev.com/demo/spring-boot-docker
+        ports:
+        - containerPort: 8080
+
