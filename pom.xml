@@ -33,9 +33,9 @@
 		<!-- <docker.image.prefix>harbor.k8s.landaudev.com/demo</docker.image.prefix> -->
 		<!-- 
 			阿里云镜像仓库
-			registry.cn-shanghai.aliyuncs.com/landasoft/landa-mas:[镜像版本号]
+			registry.cn-shanghai.aliyuncs.com/landasoft/landa-mas:[镜像版本号] 进行imagename名字凭借的时候是需要改成:
 		 -->
-		<docker.image.prefix>registry.cn-shanghai.aliyuncs.com/landasoft/landa-mas:</docker.image.prefix>
+		<docker.image.prefix>registry.cn-shanghai.aliyuncs.com/landasoft/landa-mas</docker.image.prefix>
 	</properties>
 	<profiles>  
 	    <profile>  
@@ -152,8 +152,11 @@
 	                <!-- 注意imageName一定要是符合正则[a-z0-9-_.]的，否则构建不会成功 -->
 	                <!-- 详见：https://github.com/spotify/docker-maven-plugin    Invalid repository name ... only [a-z0-9-_.] are allowed-->
 	                <!-- <imageName>wulinyun/spring-boot-docker</imageName> -->
-	                <!-- 如果要将docker镜像push到DockerHub上去的话，这边的路径要和repo路径一致 -->
+	                <!-- 如果要将docker镜像push到DockerHub上去的话，这边的路径要和repo路径一致 
 					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+					-->
+					<!-- 阿里镜像仓库使用:分隔 -->
+					<imageName>${docker.image.prefix}:${project.artifactId}</imageName>
 	               <!--  <baseImage>java</baseImage>
 	                <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint> -->
 	                <!-- 指定Dockerfile所在的路径 -->
