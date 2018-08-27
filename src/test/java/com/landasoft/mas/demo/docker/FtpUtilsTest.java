@@ -19,7 +19,7 @@ import com.landasoft.mas.demo.docker.utils.FtpUtil;
 @SpringBootTest
 public class FtpUtilsTest {
 
-	
+	@Test
 	public void test1() {
 		String ftpHost = "192.168.0.191";
         String ftpUserName = "test";
@@ -39,7 +39,7 @@ public class FtpUtilsTest {
             System.out.println(e);
         }
 	}
-	
+	@Test
 	public void test2() {
 		String ftpHost = "192.168.0.191";
         String ftpUserName = "test";
@@ -51,7 +51,7 @@ public class FtpUtilsTest {
         //下载一个文件
         FtpUtil.downloadFtpFile(ftpHost, ftpUserName, ftpPassword, ftpPort, ftpPath, localPath, fileName);
 	}
-
+	@Test
 	public void test3() {
 		String ftpHost = "192.168.0.191";
         String ftpUserName = "test";
