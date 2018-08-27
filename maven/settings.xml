@@ -55,6 +55,15 @@
 						<email>lin.wu@landasoft.com</email>
 				</configuration>
         </server>
+        <server>
+                <id>docker-aliyun-harbor</id>
+                <username>server@landasoft.com</username>
+                <password>Landa123</password>
+                <configuration>
+                        <email>lin.wu@landasoft.com</email>
+                </configuration>
+        </server>
+        
 	</servers>
 	<profiles>
 		<profile>
