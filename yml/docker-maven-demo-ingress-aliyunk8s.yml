@@ -23,7 +23,7 @@ spec:
         app: docker-maven-demo-ingress
     spec:
       imagePullSecrets: 
-      - name: landa-harbor-secret
+      - name: landa-aliyun-secret
       containers:
       - name: docker-maven-demo-ingress
         image: registry.cn-shanghai.aliyuncs.com/landasoft/landa-mas:spring-boot-docker
