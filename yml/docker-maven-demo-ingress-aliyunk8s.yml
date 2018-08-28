@@ -28,7 +28,6 @@ spec:
       - name: docker-maven-demo-ingress
         image: registry.cn-shanghai.aliyuncs.com/landasoft/landa-mas:spring-boot-docker
 #        image: harbor.k8s.landaudev.com/demo/spring-boot-docker
-        imagePullPolicy: always
         ports:
         - containerPort: 8080
 
