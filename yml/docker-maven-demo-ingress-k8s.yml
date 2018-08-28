@@ -22,9 +22,11 @@ spec:
       labels:
         app: docker-maven-demo-ingress
     spec:
+      imagePullSecrets: 
+      - name: landa-aliyun-secret
       containers:
       - name: docker-maven-demo-ingress
-        image: harbor.landaudev.com/demo/spring-boot-docker
+        image: registry.cn-shanghai.aliyuncs.com/landasoft/landa-mas:spring-boot-docker
 #        image: harbor.k8s.landaudev.com/demo/spring-boot-docker
         ports:
         - containerPort: 8080
