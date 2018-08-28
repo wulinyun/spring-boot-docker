@@ -28,6 +28,10 @@ spec:
       - name: docker-maven-demo-ingress
         image: registry.cn-shanghai.aliyuncs.com/landasoft/landa-mas:spring-boot-docker
 #        image: harbor.k8s.landaudev.com/demo/spring-boot-docker
+        imagePullPolicy: Always#三个选择Always、Never、IfNotPresent，每次启动时检查和更新（从registery）images的策略， 
+                               # Always，每次都检查 
+                               # Never，每次都不检查（不管本地是否有） 
+                               # IfNotPresent，如果本地有就不检查，如果没有就拉取 
         ports:
         - containerPort: 8080
 
