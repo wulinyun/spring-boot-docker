@@ -126,7 +126,7 @@
 	</dependencies>
 
 	<build>
-		<!-- <finalName>spring-boot-docker</finalName> --> <!-- 指定package生成的文件名为spring-boot-docker.jar -->
+		<finalName>spring-boot-docker</finalName> <!-- 指定package生成的文件名为spring-boot-docker.jar -->
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
